@@ -1,0 +1,139 @@
+.driver-card {
+    position: relative;
+    overflow: hidden;
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.driver-card-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--team-color, var(--f1-red));
+}
+
+.driver-position {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    padding: 4px 10px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+}
+
+.driver-position.position-gold {
+    background: linear-gradient(135deg, #ffd700 0%, #ffeb99 100%);
+    color: #1a1a24;
+    border-color: #ffd700;
+}
+
+.driver-position.position-silver {
+    background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 100%);
+    color: #1a1a24;
+    border-color: #c0c0c0;
+}
+
+.driver-position.position-bronze {
+    background: linear-gradient(135deg, #cd7f32 0%, #e9a763 100%);
+    color: #1a1a24;
+    border-color: #cd7f32;
+}
+
+.driver-image-container {
+    width: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.02) 0%,
+            rgba(var(--team-color-rgb, 225, 6, 0), 0.1) 100%);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.driver-headshot {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center top;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.driver-headshot-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-muted);
+    background: var(--glass-bg);
+}
+
+.driver-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.driver-name-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-xs);
+}
+
+.driver-name {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.driver-country {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    padding: 2px 6px;
+    background: var(--glass-bg);
+    border-radius: 4px;
+}
+
+.driver-team {
+    font-size: 0.875rem;
+    color: var(--team-color, var(--text-secondary));
+    font-weight: 500;
+}
+
+.driver-points {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-top: var(--spacing-xs);
+}
+
+.points-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    font-family: var(--font-display);
+    color: var(--text-primary);
+}
+
+.points-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}

@@ -1,0 +1,197 @@
+.drivers-page {
+    padding-top: var(--spacing-lg);
+}
+
+/* Page Header */
+.page-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-lg) 0;
+}
+
+.page-header h1 {
+    margin-bottom: var(--spacing-xs);
+}
+
+.page-header p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+}
+
+/* Championship Leader Spotlight */
+.champion-spotlight {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.spotlight-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-xl);
+    gap: var(--spacing-lg);
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+.spotlight-badge {
+    position: absolute;
+    top: var(--spacing-md);
+    left: var(--spacing-md);
+    padding: 6px 14px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: linear-gradient(135deg, #ffd700 0%, #ffeb99 100%);
+    color: #1a1a24;
+    border-radius: 20px;
+}
+
+.spotlight-content {
+    position: relative;
+}
+
+.spotlight-driver-info {
+    flex: 1;
+}
+
+.spotlight-driver-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.spotlight-driver-info p {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+}
+
+.spotlight-stats {
+    display: flex;
+    gap: var(--spacing-xl);
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    font-family: var(--font-display);
+    color: var(--text-primary);
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.spotlight-image {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.4));
+}
+
+/* Drivers Grid */
+.drivers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.driver-count {
+    font-size: 0.9375rem;
+    color: var(--text-muted);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: var(--glass-bg);
+    border-radius: var(--radius-sm);
+}
+
+/* Data Attribution */
+.data-attribution {
+    text-align: center;
+    padding: var(--spacing-xl) 0;
+    border-top: 1px solid var(--glass-border);
+    margin-top: var(--spacing-2xl);
+}
+
+.data-attribution p {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+}
+
+.data-attribution a {
+    color: var(--f1-red);
+}
+
+/* Teams Grid */
+.teams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.team-card {
+    position: relative;
+    padding: var(--spacing-md);
+    padding-top: calc(var(--spacing-md) + 4px);
+    overflow: hidden;
+}
+
+.team-color-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--team-color, var(--f1-red));
+}
+
+.team-name {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+    color: var(--team-color, var(--text-primary));
+}
+
+.team-drivers {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.team-driver-name {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .spotlight-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: var(--spacing-2xl);
+    }
+
+    .spotlight-driver-info h2 {
+        font-size: 1.75rem;
+    }
+
+    .spotlight-stats {
+        justify-content: center;
+    }
+
+    .spotlight-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .drivers-grid {
+        grid-template-columns: 1fr;
+    }
+}

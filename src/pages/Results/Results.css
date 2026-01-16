@@ -1,0 +1,442 @@
+.results-page {
+    padding-top: var(--spacing-lg);
+}
+
+/* Page Header */
+.page-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-lg) 0;
+}
+
+.page-header h1 {
+    margin-bottom: var(--spacing-xs);
+}
+
+.page-header p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+}
+
+/* Results Layout */
+.results-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--spacing-lg);
+    align-items: start;
+}
+
+/* Race Selector */
+.race-selector {
+    position: sticky;
+    top: 90px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+}
+
+.race-selector h3 {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--spacing-sm);
+    padding: 0 var(--spacing-xs);
+}
+
+.race-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.race-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    text-align: left;
+    transition: all var(--transition-fast);
+}
+
+.race-item:hover {
+    background: var(--glass-bg);
+    border-color: var(--glass-border);
+}
+
+.race-item.active {
+    background: rgba(225, 6, 0, 0.1);
+    border-color: var(--f1-red);
+}
+
+.race-round {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--f1-red);
+    background: rgba(225, 6, 0, 0.15);
+    padding: 4px 8px;
+    border-radius: 4px;
+    min-width: 36px;
+    text-align: center;
+}
+
+.race-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.race-item-name {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.race-item-date {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Results Main */
+.results-main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.results-header {
+    padding: var(--spacing-lg);
+}
+
+.results-round {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--f1-red);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.results-race-info h2 {
+    font-size: 2rem;
+    margin: var(--spacing-xs) 0;
+}
+
+.results-circuit {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.results-date {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+/* Podium */
+.results-podium {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: var(--spacing-md);
+    align-items: end;
+}
+
+.podium-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-lg) var(--spacing-md);
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.podium-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--team-color);
+}
+
+.podium-item.p1 {
+    padding-bottom: var(--spacing-xl);
+}
+
+.podium-item.p1 .podium-position {
+    background: linear-gradient(135deg, #ffd700 0%, #ffeb99 100%);
+    color: #1a1a24;
+    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+}
+
+.podium-item.p2 .podium-position {
+    background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 100%);
+    color: #1a1a24;
+}
+
+.podium-item.p3 .podium-position {
+    background: linear-gradient(135deg, #cd7f32 0%, #e9a763 100%);
+    color: #1a1a24;
+}
+
+.podium-position {
+    font-size: 1.5rem;
+    font-weight: 800;
+    font-family: var(--font-display);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom: var(--spacing-sm);
+}
+
+.podium-image {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: var(--spacing-sm);
+}
+
+.podium-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.podium-info strong {
+    font-size: 1rem;
+}
+
+.podium-info span {
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+}
+
+.podium-time {
+    font-family: monospace;
+    color: var(--text-muted) !important;
+}
+
+/* Results Table */
+.results-table-container {
+    padding: var(--spacing-lg);
+    overflow-x: auto;
+}
+
+.results-table-container h3 {
+    margin-bottom: var(--spacing-md);
+    font-size: 1.125rem;
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.results-table th,
+.results-table td {
+    padding: var(--spacing-sm);
+    text-align: left;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.results-table th {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.results-table tbody tr:hover {
+    background: var(--glass-bg);
+}
+
+.pos-cell .position {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    height: 28px;
+    font-weight: 700;
+    border-radius: 6px;
+    font-size: 0.875rem;
+}
+
+.pos-cell .position.top-1 {
+    background: linear-gradient(135deg, #ffd700, #ffeb99);
+    color: #1a1a24;
+}
+
+.pos-cell .position.top-2 {
+    background: linear-gradient(135deg, #c0c0c0, #e8e8e8);
+    color: #1a1a24;
+}
+
+.pos-cell .position.top-3 {
+    background: linear-gradient(135deg, #cd7f32, #e9a763);
+    color: #1a1a24;
+}
+
+.driver-cell {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.driver-color-bar {
+    width: 4px;
+    height: 20px;
+    border-radius: 2px;
+}
+
+.team-cell {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.time-cell {
+    font-family: monospace;
+    font-size: 0.875rem;
+}
+
+.points-cell .points-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background: rgba(225, 6, 0, 0.15);
+    color: var(--f1-red);
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.8125rem;
+}
+
+.points-cell .no-points {
+    color: var(--text-muted);
+}
+
+/* Fastest Lap */
+.fastest-lap {
+    padding: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.fastest-lap h4 {
+    font-size: 0.875rem;
+    color: #a855f7;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.fastest-lap-info {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.fl-driver {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.fl-time {
+    font-family: monospace;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.fl-speed {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .results-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .race-selector {
+        position: static;
+    }
+
+    .race-list {
+        flex-direction: row;
+        overflow-x: auto;
+        max-height: none;
+        gap: var(--spacing-xs);
+        padding-bottom: var(--spacing-xs);
+    }
+
+    .race-item {
+        flex-shrink: 0;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: var(--spacing-sm);
+        min-width: 100px;
+    }
+
+    .race-item-info {
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .results-podium {
+        grid-template-columns: 1fr;
+        order: 2;
+    }
+
+    .podium-item {
+        flex-direction: row;
+        text-align: left;
+        gap: var(--spacing-md);
+    }
+
+    .podium-info {
+        align-items: flex-start;
+    }
+
+    .results-table th,
+    .results-table td {
+        padding: var(--spacing-xs);
+        font-size: 0.8125rem;
+    }
+
+    .fastest-lap {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .fastest-lap-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
+}
